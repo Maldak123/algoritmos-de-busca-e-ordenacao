@@ -1,14 +1,18 @@
 function bubble(nums) {
-  for(let i = 0; i < nums.length - 1; i++){
-    let vari;
+  let vari;
+  let activation;
 
-    if(nums[i] > nums[i + 1]){
-      vari = nums[i];
-      nums[i] = nums[i + 1];
-      nums[i + 1] = vari;
-      bubble(nums);
+  do {
+    activation = false;
+    for (let i = 0; i < nums.length - 1; i++) {
+      if (nums[i] > nums[i + 1]) {
+        vari = nums[i];
+        nums[i] = nums[i + 1];
+        nums[i + 1] = vari;
+        activation = true;
+      }
     }
-  }
+  } while (activation);
   return nums;
 }
 
